@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Databases &amp; digital resources · Learners Cove · The Shri Ram Academy</title>
+<title>Databases & digital resources · Learners Cove · The Shri Ram Academy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Karla:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -293,6 +293,86 @@ footer address{font-style:normal;font-size:14.5px;line-height:1.8}
 .dbhelp .g2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 @media(max-width:960px){.dbgrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.dbgrid,.dbhelp .g2{grid-template-columns:1fr}.dbsearch button{padding:0 18px}}
+
+/* ---------- content pages ---------- */
+.pagehero{border-bottom:6px solid var(--tint,var(--gold))}
+.pagehero .wrap{padding-bottom:54px}
+.wingnav{background:var(--white);border-bottom:1px solid var(--line)}
+.wingnav .wrap{display:flex;align-items:center;overflow-x:auto}
+.wingnav .lbl{padding:15px 18px 15px 0;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.wingnav a{padding:15px 18px;font-weight:700;font-size:14px;color:var(--muted);border-bottom:3px solid transparent;white-space:nowrap}
+.wingnav a:hover{color:var(--maroon)}
+.wingnav a[aria-current="page"]{color:var(--maroon);border-bottom-color:var(--maroon)}
+.sec-alt{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sec-white{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.card>p{font-size:14.5px;color:var(--muted);margin:0}
+.card.dark>p{color:#C9D6CE}
+.prose p{max-width:68ch;margin:0 0 14px}
+.prose h3{font-size:21px;margin:26px 0 10px}
+.prose ul{margin:0 0 14px;padding-left:20px;max-width:68ch}
+.prose li{margin-bottom:6px}
+.stat{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--maroon);padding:20px}
+.stat b{display:block;font-family:var(--display);font-size:34px;color:var(--maroon);line-height:1.1;font-weight:600}
+.stat span{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.stat p{margin:8px 0 0;font-size:13.5px;color:var(--muted)}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;gap:14px}
+.steps li{counter-increment:s;display:flex;gap:18px;background:var(--white);border:1px solid var(--line);padding:18px 20px}
+.steps li::before{content:counter(s,decimal-leading-zero);font-family:var(--mono);font-size:13px;color:var(--gold);letter-spacing:.1em;padding-top:3px}
+.steps h4{font-size:17.5px;margin-bottom:4px}
+.steps p{margin:0;font-size:14.5px;color:var(--muted)}
+.tablewrap{overflow-x:auto}
+.dt{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--line);font-size:14.5px}
+.dt th,.dt td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+.dt th{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:var(--paper-2);font-weight:500}
+.dt td:first-child{font-weight:700;color:var(--ink)}
+.dt td{color:var(--muted)}
+.faq details{background:var(--white);border:1px solid var(--line);margin-bottom:10px}
+.faq summary{cursor:pointer;padding:16px 20px;font-family:var(--display);font-weight:600;font-size:17px}
+.faq details[open] summary{color:var(--maroon)}
+.faq details p{margin:0;padding:0 20px 18px;color:var(--muted);font-size:14.5px}
+.callout{border-left:4px solid var(--gold);background:var(--white);padding:18px 22px;margin:22px 0}
+.callout h4{font-size:17px;margin-bottom:6px}
+.callout p{margin:0;color:var(--muted);font-size:14.5px}
+.ctaband{background:var(--forest-deep);color:#E6ECE8;padding:46px 0}
+.ctaband .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.ctaband h2{color:#fff;font-size:26px}
+.ctaband p{margin:6px 0 0;color:#B9C7BF;max-width:60ch}
+.ctaband .btn{margin-top:0}
+.cols2{display:grid;grid-template-columns:1.15fr 1fr;gap:34px;align-items:start}
+.cite{background:var(--white);border-left:3px solid var(--gold);padding:12px 16px;margin:10px 0;font-size:15px}
+.cite small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.mono{font-family:var(--mono);font-size:13px;background:var(--white);border:1px solid var(--line);padding:14px 16px;word-break:break-word;color:var(--ink)}
+.tool{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--gold);padding:24px}
+.tool label{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
+.tool input[type=text]{width:100%;border:2px solid var(--line);padding:12px 14px;font-family:var(--body);font-size:16px}
+.tool input[type=text]:focus{outline:2px solid var(--maroon);outline-offset:-2px}
+.checks label{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);background:var(--paper);padding:13px 15px;margin:0 0 10px;cursor:pointer;font-family:var(--body);font-size:15px;letter-spacing:0;text-transform:none;color:var(--ink)}
+.checks input{margin-top:4px;accent-color:var(--maroon)}
+.verdict{margin-top:16px;padding:16px 18px;border-left:4px solid var(--gold);background:var(--paper-2);font-size:15px}
+.verdict b{font-family:var(--display);font-size:19px;display:block;margin-bottom:4px}
+@media(max-width:960px){.cols2{grid-template-columns:1fr}}
+@media(max-width:760px){.steps li{flex-direction:column;gap:6px}}
+
+.db .best{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+.db .best span{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--forest);background:var(--paper-2);padding:3px 7px}
+.db .tip{font-size:13px;color:var(--muted);border-top:1px dotted var(--line);padding-top:10px;margin:0 0 16px}
+.db .tip b{color:var(--ink);font-weight:700}
+.db .flag{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:4px 8px;margin-left:6px;background:var(--gold);color:var(--forest-deep);font-weight:700}
+.db .flag.free{background:var(--forest);color:#fff}
+.db .top .r{display:flex;align-items:center}
+.db[data-cat="Background & reference"]{border-top-color:var(--forest)}
+.db[data-cat="Articles & journals"]{border-top-color:var(--maroon)}
+.db[data-cat="News & current events"]{border-top-color:#A8452F}
+.db[data-cat="Data & statistics"]{border-top-color:var(--gold)}
+.db[data-cat="Subject & exam practice"]{border-top-color:var(--gold)}
+.db[data-cat="Arts & performance"]{border-top-color:#A8452F}
+.db[data-cat="Young readers"]{border-top-color:var(--forest)}
+.typecard .card{display:flex;flex-direction:column}
+.typecard .card .start{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:14px 0 4px}
+.typecard .card .names{font-weight:700;font-size:14.5px;margin:0 0 6px;color:var(--ink)}
+.typecard .card>p{flex:0}
+.typecard .card .viewall{margin-top:auto;align-self:flex-start;background:none;border-top:0;border-left:0;border-right:0;cursor:pointer;padding-top:12px}
+.typecard .card .use{margin:10px 0 14px;font-size:13.5px}
 </style>
 </head>
 <body>
@@ -303,7 +383,7 @@ footer address{font-style:normal;font-size:14.5px;line-height:1.8}
     <nav class="util-links" aria-label="Quick links">
       <a href="index.html#catalogue">Catalogue (OPAC)</a>
       <a href="databases.html">Databases</a>
-      <a href="index.html#ebooks">eBooks &amp; Audiobooks</a>
+      <a href="index.html#catalogue">eBooks &amp; Audiobooks</a>
       <a href="index.html#downloads">Downloads</a>
       <a href="index.html#remote">Remote access</a>
       <a href="https://tsrahyderabad.com/">TSRA main site</a>
@@ -371,7 +451,7 @@ footer address{font-style:normal;font-size:14.5px;line-height:1.8}
           <a href="#collections">Magazines &amp; newspapers</a>
           <a href="#collections">Home-Language collection</a>
           <div class="grp">Digital</div>
-          <a href="index.html#ebooks">eBooks &amp; audiobooks</a>
+          <a href="index.html#catalogue">eBooks &amp; audiobooks</a>
           <a href="databases.html">Subscribed databases</a>
           <a href="databases.html">Free &amp; open resources</a>
           <a href="index.html#remote">Remote access from home</a>
@@ -438,8 +518,9 @@ footer address{font-style:normal;font-size:14.5px;line-height:1.8}
 <div class="pagehero" id="top">
   <div class="wrap">
     <div class="crumbs"><a href="index.html">Home</a><span>/</span><a href="index.html#account">Digital resources</a><span>/</span>Databases</div>
+    <p class="eyebrow on-dark">Digital resources</p>
     <h2>Databases &amp; <em>digital resources</em></h2>
-    <p class="lede">Research tools, data, exam practice and subject resources chosen to support IB inquiry. Find the right one by name, subject or type, then open it with your school login.</p>
+    <p class="lede">Research tools, data, exam practice and subject resources chosen to support IB inquiry. Choose by the kind of information you need, then open it with your school login.</p>
     <form class="dbsearch" role="search" onsubmit="return false">
       <label for="dbq" style="position:absolute;left:-9999px">Search databases</label>
       <input id="dbq" type="search" placeholder="Search by name or type, e.g. past papers, statistics" autocomplete="off">
@@ -447,11 +528,23 @@ footer address{font-style:normal;font-size:14.5px;line-height:1.8}
     </form>
   </div>
 </div>
-
-<!-- LIST -->
 <main>
-<section class="pad">
+<section class="pad" id="choose">
   <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Choose a tool</p><h2>Not sure where to start? Choose by the kind of information you need</h2></div>
+<div class="grid g3 typecard"><div class="card"><h3>Background &amp; key terms</h3><p>Start here when a topic is new. Get an overview, learn the vocabulary, and collect words to search with.</p><div class="start">Start with</div><div class="names">Britannica School &middot; World Book Online</div><p class="use">Use it when you need to understand a topic before you narrow your question.</p><button type="button" class="viewall" data-go="Background & reference">Show these &darr;</button></div><div class="card"><h3>Scholarly articles</h3><p>For research studies, theory and academic debate, once your question is becoming focused.</p><div class="start">Start with</div><div class="names">JSTOR &middot; EBSCO Explora &middot; Google Scholar</div><p class="use">Use it when you need evidence and analysis from experts.</p><button type="button" class="viewall" data-go="Articles & journals">Show these &darr;</button></div><div class="card"><h3>News &amp; current events</h3><p>For a specific event, recent reporting, or analysis you can cite as evidence.</p><div class="start">Start with</div><div class="names">The Economist &middot; PressReader &middot; Gale In Context</div><p class="use">Use it when you need up-to-date coverage. Always note the date.</p><button type="button" class="viewall" data-go="News & current events">Show these &darr;</button></div><div class="card"><h3>Data &amp; statistics</h3><p>Graphs, trends and comparisons for Economics, Business, Geography and Environmental Systems.</p><div class="start">Start with</div><div class="names">Statista &middot; Our World in Data</div><p class="use">Use it when you need numbers to analyse. Trace each figure to its original source.</p><button type="button" class="viewall" data-go="Data & statistics">Show these &darr;</button></div><div class="card"><h3>Subject notes &amp; exam practice</h3><p>IB-aligned notes, past papers and practice questions for revision.</p><div class="start">Start with</div><div class="names">In-Thinking &middot; Revision Village &middot; Save My Exams &middot; Exam Mate</div><p class="use">Use it when you are revising or want worked examples.</p><button type="button" class="viewall" data-go="Subject & exam practice">Show these &darr;</button></div><div class="card"><h3>Arts &amp; performance</h3><p>Filmed productions and learning resources for Drama and the performing arts.</p><div class="start">Start with</div><div class="names">Digital Theatre</div><p class="use">Use it when you want to watch, analyse and write about live performance.</p><button type="button" class="viewall" data-go="Arts & performance">Show these &darr;</button></div></div><div class="callout"><h4>These tools are not &ldquo;better&rdquo; or &ldquo;worse&rdquo; than Google</h4><p>They are built for different kinds of evidence. Decide what you need first, then choose the tool that holds it.</p></div>
+  </div>
+</section>
+<section class="pad sec-alt">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Same magazine, three jobs</p><h2>Different tools work differently</h2><p>Imagine you want to use a magazine in your research. Which tool you pick depends on what you are trying to do.</p></div>
+<ol class="steps"><li><div><h4>To read a whole issue</h4><p>Use the digital newsstand (PressReader), where a newspaper or magazine opens as a complete issue.</p></div></li><li><div><h4>To find one article you already know</h4><p>Search EBSCO Explora for the article title in quotation marks.</p></div></li><li><div><h4>To find articles on a topic</h4><p>Search your topic in EBSCO Explora, then narrow the results by publication, date or source type.</p></div></li></ol>
+  </div>
+</section>
+<section class="pad" id="list">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Databases A&ndash;Z</p><h2>The full list</h2></div>
+
     <div class="dbbar">
       <div class="chips" id="chips" role="group" aria-label="Filter by type"></div>
       <div class="dbcount" id="dbcount" aria-live="polite"></div>
@@ -463,21 +556,25 @@ footer address{font-style:normal;font-size:14.5px;line-height:1.8}
     </div>
   </div>
 </section>
-
-<section class="dbhelp">
+<section class="pad sec-white">
   <div class="wrap">
-    <div class="g2">
-      <div class="card">
-        <h3>Working off campus?</h3>
-        <p style="font-size:14.5px;color:var(--muted);margin:0">Most of these open from home with your school login. Full instructions are in the remote access section of the library home page.</p>
-        <a class="viewall" href="index.html#remote">Remote access</a>
-      </div>
-      <div class="card">
-        <h3>Not sure which one to use?</h3>
-        <p style="font-size:14.5px;color:var(--muted);margin:0">Come with your topic or subject and a librarian will help you choose, search and reference what you find. Fifteen minutes is usually enough.</p>
-        <a class="viewall" href="mailto:library@tsrahyderabad.com">Ask a librarian</a>
-      </div>
-    </div>
+    <div class="sec-head"><p class="eyebrow">Good to know</p><h2>Where you found it is not what it is</h2></div>
+<div class="cols2">
+  <div class="prose">
+    <p>JSTOR, EBSCO Explora and the newsstand are places you <em>found</em> a source. They are not the type of source itself. What you have found might be a journal article, a newspaper report, a book chapter or a statistic.</p>
+    <p>When you cite, say what the source is, who made it, and where you found it. And if a database leads you to a figure or a quotation, trace it to the original before you rely on it.</p>
+  </div>
+  <div class="card"><h3>Need help citing?</h3><p>Our MLA 9 guide shows how to cite articles, web pages and AI tools, including the database you found them in.</p><a class="viewall" href="citing.html">Citing guide</a></div>
+</div>
+  </div>
+</section>
+<section class="pad sec-alt">
+  <div class="wrap">
+    <div class="sec-head"><h2>Working off campus?</h2></div>
+<div class="grid g2">
+  <div class="card"><h3>Remote access</h3><p>Subscribed databases open off campus with your school email and password. If a resource asks you to pay, you have landed outside our subscription: come back through the library page.</p><a class="viewall" href="index.html#remote">Set up remote access</a></div>
+  <div class="card"><h3>Need help choosing?</h3><p>Fifteen minutes with a librarian, in the library or by email. Come with your topic; leave with a search plan and three sources worth reading.</p><a class="viewall" href="mailto:library@tsrahyderabad.com">Ask a librarian</a></div>
+</div>
   </div>
 </section>
 </main>
@@ -526,33 +623,94 @@ footer address{font-style:normal;font-size:14.5px;line-height:1.8}
 
 
 <script>
+
 /* ---- database list: edit this array to add, remove or re-link resources ----
-   url: paste your school's access link here (the site's public home page is used where known; leave "" to show a placeholder) */
+   url: paste your school's access link here (the public home page is used where known; leave "" to show a placeholder)
+   free: true shows a "Free" badge and includes it under the Free & open filter
+   start: true shows a "Start here" badge */
 const DBS=[
-  {name:"JSTOR",cat:"Research & news",url:"https://www.jstor.org/",
-   desc:"Scholarly journal articles, books and primary sources across the humanities, social sciences and sciences. A strong starting point for the Personal Project and Extended Essay."},
-  {name:"Digital Theatre",cat:"Arts",url:"https://www.digitaltheatreplus.com/",
-   desc:"Filmed professional theatre productions with interviews and learning resources, for Drama and performing arts study."},
-  {name:"The Economist",cat:"Research & news",url:"https://www.economist.com/",
-   desc:"Weekly analysis of world affairs, business, science and culture. Useful for Individuals & societies and for keeping up with current events."},
-  {name:"Statista Campus License",cat:"Research & news",url:"https://www.statista.com/",
-   desc:"Statistics, forecasts and reports on industries, markets, consumers and countries, with charts you can cite in data-based inquiry."},
+  {name:"Britannica School",cat:"Background & reference",start:true,url:"https://school.eb.com/",
+   best:["Background","Key terms","Overviews"],
+   desc:"Encyclopedia articles at different reading levels, across all subjects. A reliable place to build context before you narrow your question.",
+   tip:"Use it early to collect vocabulary, people, events and concepts, then search specialised databases with those words."},
+  {name:"World Book Online",cat:"Background & reference",url:"https://www.worldbookonline.com/",
+   best:["Background","Younger readers"],
+   desc:"A friendly encyclopedia for a first look at a topic, with articles, images and media.",
+   tip:"Sketch a quick mind map of what you learn, then decide which parts to research further."},
+  {name:"EBSCO Explora",cat:"Articles & journals",start:true,url:"",
+   best:["Magazine articles","General research","Cross-subject"],
+   desc:"Magazine and journal articles, newspapers and reference sources from several collections, through one search box.",
+   tip:"Search a topic, then narrow by publication, date or source type. To find one article, search its title in quotation marks."},
+  {name:"JSTOR",cat:"Articles & journals",start:true,url:"https://www.jstor.org/",
+   best:["Humanities","Social sciences","Scholarly articles"],
+   desc:"Scholarly journal articles, books and primary sources, with particular strength in the humanities and social sciences. Suited to the Personal Project and Extended Essay.",
+   tip:"Most useful once your research question is focused and you need scholarly interpretation or analysis."},
+  {name:"Google Scholar",cat:"Articles & journals",free:true,url:"https://scholar.google.com/",
+   best:["Scholarly articles","Citation chasing"],
+   desc:"A free search across scholarly writing from many publishers, universities and repositories.",
+   tip:"Finding a citation does not mean you can read the full article. If it is behind a paywall, search its title in our databases."},
+  {name:"The Economist",cat:"News & current events",url:"https://www.economist.com/",
+   best:["Current affairs","Business","Analysis"],
+   desc:"Weekly reporting and analysis of world affairs, business, science and culture. Useful for Individuals & societies and for following current events.",
+   tip:"Good for context and analysis. Note the date, and remember that it is a publication with its own point of view."},
+  {name:"PressReader newsstand",cat:"News & current events",url:"https://www.pressreader.com/",
+   best:["Whole issues","Newspapers","Magazines"],
+   desc:"A digital newsstand with more than 40 newspapers and magazines, including The Hindu and Young World.",
+   tip:"Best for reading a complete issue. To find articles on a topic across many publications, use EBSCO Explora."},
+  {name:"Gale In Context: Middle School",cat:"News & current events",url:"",
+   best:["Topic overviews","News","MYP 1\u20133"],
+   desc:"Topic overviews, news and sources chosen for middle school, with links to related articles.",
+   tip:"Start from the topic overview, then follow the linked articles and sources."},
+  {name:"Statista Campus License",cat:"Data & statistics",start:true,url:"https://www.statista.com/",
+   best:["Statistics","Business","Economics","Geography"],
+   desc:"Statistics, forecasts and reports on industries, markets, consumers and countries, with charts you can cite in data-based inquiry.",
+   tip:"Check the original source attached to a statistic before you use it as evidence."},
+  {name:"Our World in Data",cat:"Data & statistics",free:true,url:"https://ourworldindata.org/",
+   best:["Data & trends","Global issues","Background"],
+   desc:"Free, research-based explanations, charts and data on health, environment, economics, education, population and society.",
+   tip:"Browse by topic, then follow the links to the original data sources before you use a figure as evidence."},
+  {name:"Digital Theatre",cat:"Arts & performance",url:"https://www.digitaltheatreplus.com/",
+   best:["Drama","Performance","Analysis"],
+   desc:"Filmed professional theatre productions with interviews and learning resources, for Drama and performing arts study.",
+   tip:"Watch a scene more than once: first for the story, then for staging, voice and movement."},
   {name:"Turnitin",cat:"Academic Integrity",url:"https://www.turnitin.com/",
-   desc:"Originality checking and feedback that compares submitted work with other sources, supporting academic integrity and good referencing."},
-  {name:"In-Thinking",cat:"IB subject resources",url:"https://www.inthinking.net/",
-   desc:"Subject-specific notes, guides and examples written for IB courses."},
-  {name:"Philpot Education",cat:"IB subject resources",url:"",
-   desc:"IB-aligned study and revision resources for subject learning."},
-  {name:"Revision Village",cat:"Exam practice",url:"https://www.revisionvillage.com/",
-   desc:"IB-style question banks, video solutions and practice exams for revision and exam preparation."},
-  {name:"Question Bank",also:"Follett Titlewave",cat:"Exam practice",url:"https://www.titlewave.com/",
-   desc:"Question bank access provided through Follett Titlewave."},
-  {name:"Save My Exams",cat:"Exam practice",url:"https://www.savemyexams.com/",
-   desc:"Revision notes, topic questions and past papers with mark schemes."},
-  {name:"Exam Mate",cat:"Exam practice",url:"https://www.exam-mate.com/",
-   desc:"Past papers and mark schemes organised by subject and year."}
+   best:["Originality","Feedback"],
+   desc:"Originality checking and feedback that compares submitted work with other sources, supporting Academic Integrity and good referencing.",
+   tip:"Use the report to improve how you paraphrase and cite, not just to check a score."},
+  {name:"In-Thinking",cat:"Subject & exam practice",url:"https://www.inthinking.net/",
+   best:["IB subjects","Notes","Examples"],
+   desc:"Subject-specific notes, guides and examples written for IB courses.",
+   tip:"Use it to check you have understood a topic, then go to primary and scholarly sources for evidence."},
+  {name:"Philpot Education",cat:"Subject & exam practice",url:"",
+   best:["IB subjects","Revision"],
+   desc:"IB-aligned study and revision resources for subject learning.",
+   tip:"Pair it with past papers so you practise what you revise."},
+  {name:"Revision Village",cat:"Subject & exam practice",url:"https://www.revisionvillage.com/",
+   best:["Question bank","Video solutions","Practice exams"],
+   desc:"IB-style question banks, video solutions and practice exams for revision and exam preparation.",
+   tip:"Attempt a question before you watch the solution, then compare your method with the worked answer."},
+  {name:"Question Bank",also:"Follett Titlewave",cat:"Subject & exam practice",url:"https://www.titlewave.com/",
+   best:["Question bank"],
+   desc:"Question bank access provided through Follett Titlewave.",
+   tip:"Ask a librarian if you are not sure how to sign in."},
+  {name:"Save My Exams",cat:"Subject & exam practice",url:"https://www.savemyexams.com/",
+   best:["Revision notes","Past papers","Mark schemes"],
+   desc:"Revision notes, topic questions and past papers with mark schemes.",
+   tip:"Check the mark scheme after each paper to see how marks are awarded."},
+  {name:"Exam Mate",cat:"Subject & exam practice",url:"https://www.exam-mate.com/",
+   best:["Past papers","Mark schemes"],
+   desc:"Past papers and mark schemes organised by subject and year.",
+   tip:"Work through papers by year, so you see how questions change over time."},
+  {name:"National Geographic Kids",cat:"Young readers",url:"https://kids.nationalgeographic.com/",
+   best:["Animals","Science","Geography"],
+   desc:"Animals, science and the world around us, with photographs and facts written for children.",
+   tip:"Great for Primary and MYP 1\u20133 projects. Ask a librarian for more reading on a topic you like."},
+  {name:"National Digital Library of India",cat:"Background & reference",free:true,url:"https://ndl.iitkgp.ac.in/",
+   best:["Free","Books & articles","India"],
+   desc:"A free national digital library of books, articles and learning material from across India.",
+   tip:"Free and open, so no school login is needed."}
 ];
-const CATS=["All",...new Set(DBS.map(d=>d.cat))];
+const CATS=["All","Background & reference","Articles & journals","News & current events","Data & statistics","Subject & exam practice","Arts & performance","Academic Integrity","Young readers","Free & open"];
 let cat="All",q="";
 const esc=t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const grid=document.getElementById('dbgrid'),chips=document.getElementById('chips'),
@@ -563,12 +721,14 @@ function chipsRender(){
 function render(){
   const term=q.trim().toLowerCase();
   const list=DBS.map((d,i)=>({...d,no:String(i+1).padStart(2,'0')})).filter(d=>
-    (cat==="All"||d.cat===cat) &&
-    (!term||(d.name+" "+(d.also||"")+" "+d.cat+" "+d.desc).toLowerCase().includes(term)));
+    (cat==="All"||(cat==="Free & open"?d.free:d.cat===cat)) &&
+    (!term||(d.name+" "+(d.also||"")+" "+d.cat+" "+d.best.join(" ")+" "+d.desc+" "+d.tip).toLowerCase().includes(term)));
   grid.innerHTML=list.map(d=>`<article class="db" data-cat="${esc(d.cat)}">
-    <div class="top"><span class="no">${d.no}</span><span class="cat">${esc(d.cat)}</span></div>
+    <div class="top"><span class="no">${d.no}</span><span class="r"><span class="cat">${esc(d.cat)}</span>${d.start?'<span class="flag">Start here</span>':''}${d.free?'<span class="flag free">Free</span>':''}</span></div>
     <h3>${esc(d.name)}</h3>${d.also?`<div class="also">${esc(d.also)}</div>`:''}
     <p>${esc(d.desc)}</p>
+    <div class="best">${d.best.map(b=>`<span>${esc(b)}</span>`).join('')}</div>
+    <p class="tip"><b>Tip:</b> ${esc(d.tip)}</p>
     <a class="open" href="${d.url?esc(d.url):'#'}"${d.url?' target="_blank" rel="noopener"':''}>Open ${d.url?'database':'(link to be added)'} &rarr;</a>
   </article>`).join('');
   count.textContent=list.length+(list.length===1?' resource':' resources')+(list.length===DBS.length?'':' of '+DBS.length);
@@ -577,6 +737,10 @@ function render(){
 chips.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;cat=b.dataset.c;chipsRender();render();});
 box.addEventListener('input',()=>{q=box.value;render();});
 document.getElementById('dbgo').addEventListener('click',()=>{q=box.value;render();});
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>{
+  cat=b.dataset.go;q='';box.value='';chipsRender();render();
+  document.getElementById('list').scrollIntoView({behavior:'smooth',block:'start'});
+}));
 chipsRender();render();
 
 /* ---- nav dropdowns (click on touch, hover on desktop) ---- */
