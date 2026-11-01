@@ -1,178 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Primary Library Login | Learners Cove</title>
+<title>Sign in &middot; Primary Cove | Learners Cove (Library), The Shri Ram Academy, Hyderabad</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Karla:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#0b2545;--navy2:#13315c;--teal:#1fa6a0;--gold:#d4a62a;--accent:#1fa6a0;--ink:#14213d;--muted:#5b6b82;--line:#dde4ee;--bg:#f4f7fb;}
-*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#17231D;
+  --forest:#1E3A31;
+  --forest-deep:#132720;
+  --maroon:#8C1D2F;
+  --maroon-dark:#6B1523;
+  --gold:#C6A15B;
+  --paper:#FBFAF7;
+  --paper-2:#F2EFE8;
+  --line:#DCD6C9;
+  --muted:#5C6660;
+  --white:#fff;
+
+  --display:'Fraunces',Georgia,serif;
+  --body:'Karla',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+
+  --wrap:1180px;
+  --r:3px;
+}
+*{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:var(--bg);min-height:100vh;display:flex;flex-direction:column}
-a{color:inherit}
-/* Header */
-.topbar{background:var(--navy);color:#fff;font-size:.8rem}
-.topbar .in{max-width:1200px;margin:auto;padding:.45rem 1.5rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-.topbar a{text-decoration:none;opacity:.85;margin-left:1.1rem}.topbar a:hover{opacity:1;color:var(--gold)}
-header.site{background:#fff;border-bottom:3px solid var(--accent);position:sticky;top:0;z-index:20;box-shadow:0 2px 12px rgba(11,37,69,.08)}
-header.site .in{max-width:1200px;margin:auto;padding:.8rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.brand{display:flex;align-items:center;gap:.8rem;text-decoration:none}
-.logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--navy),var(--navy2));display:grid;place-items:center;color:var(--gold);font-family:'Playfair Display',serif;font-weight:700;font-size:1.3rem;border-bottom:3px solid var(--accent)}
-.brand b{display:block;font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--navy);line-height:1.1}
-.brand small{color:var(--muted);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase}
-nav ul{display:flex;list-style:none;gap:.25rem;flex-wrap:wrap}
-nav a{display:block;padding:.55rem .9rem;border-radius:8px;text-decoration:none;font-weight:500;font-size:.92rem;color:var(--navy)}
-nav a:hover{background:var(--bg)}
-nav a.active{background:var(--navy);color:#fff}
-/* Hero + login */
-.hero{position:relative;flex:1;display:grid;place-items:center;padding:3rem 1.25rem;
- background:linear-gradient(120deg,rgba(11,37,69,.92),rgba(19,49,92,.82)),url('landing.jpg') center/cover no-repeat,var(--navy)}
-.wrap{max-width:1050px;width:100%;display:grid;grid-template-columns:1.05fr 1fr;gap:2.5rem;align-items:center}
-.intro{color:#fff}
-.chip{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:.3rem .8rem;border-radius:999px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.1rem}
-.chip i{color:var(--gold);font-style:normal}
-.intro h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.2vw,3rem);line-height:1.12;margin-bottom:.9rem}
-.intro h1 span{color:var(--gold)}
-.intro p.lead{opacity:.9;line-height:1.65;margin-bottom:1.5rem;max-width:34rem}
-.perks{list-style:none;display:grid;gap:.7rem}
-.perks li{display:flex;gap:.7rem;align-items:flex-start;font-size:.95rem;opacity:.95}
-.perks li::before{content:"✓";flex:none;width:1.4rem;height:1.4rem;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:.75rem;font-weight:700;margin-top:.1rem}
-.card{background:#fff;border-radius:18px;padding:2rem;box-shadow:0 24px 60px rgba(0,0,0,.35);border-top:5px solid var(--gold)}
-.card h2{font-family:'Playfair Display',serif;color:var(--navy);font-size:1.6rem;margin-bottom:.2rem}
-.card .sub{color:var(--muted);font-size:.9rem;margin-bottom:1.3rem}
-.tabs{display:grid;grid-template-columns:1fr 1fr;background:var(--bg);border-radius:10px;padding:4px;margin-bottom:1.3rem}
-.tabs button{border:0;background:transparent;padding:.65rem;border-radius:8px;font:600 .92rem 'Inter',sans-serif;color:var(--muted);cursor:pointer;transition:.15s}
-.tabs button[aria-selected="true"]{background:var(--navy);color:#fff;box-shadow:0 2px 8px rgba(11,37,69,.25)}
-label{display:block;font-weight:600;font-size:.85rem;margin-bottom:.35rem;color:var(--navy)}
-.field{margin-bottom:1rem}
-.input{position:relative}
-input[type=text],input[type=email],input[type=password]{width:100%;padding:.8rem .95rem;border:1.5px solid var(--line);border-radius:10px;font:inherit;font-size:.95rem;color:var(--ink);background:#fff;transition:.15s}
-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 25%,transparent)}
-.toggle{position:absolute;right:.5rem;top:50%;transform:translateY(-50%);border:0;background:none;color:var(--muted);font:600 .78rem 'Inter',sans-serif;cursor:pointer;padding:.4rem .5rem;border-radius:6px}
-.toggle:hover{color:var(--navy)}
-.row{display:flex;justify-content:space-between;align-items:center;gap:.5rem;margin:.2rem 0 1.2rem;font-size:.85rem;flex-wrap:wrap}
-.row label{display:flex;gap:.45rem;align-items:center;font-weight:500;margin:0;color:var(--ink)}
-.row a{color:var(--navy);font-weight:600}
-.btn{width:100%;border:0;cursor:pointer;padding:.9rem;border-radius:10px;background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;font:600 1rem 'Inter',sans-serif;border-bottom:3px solid var(--gold);transition:.15s}
-.btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(11,37,69,.3)}
-.msg{display:none;margin-bottom:1rem;padding:.7rem .9rem;border-radius:8px;font-size:.86rem;background:#fff4e0;color:#7a5200;border:1px solid #f0d49a}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 22px}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.15;margin:0}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--maroon);margin:0 0 10px}
+.eyebrow.on-dark{color:var(--gold)}
+
+/* ---------- utility bar ---------- */
+.util{background:var(--forest-deep);color:#D8E0DA;font-size:12.5px}
+.util .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;min-height:38px;padding-top:6px;padding-bottom:6px}
+.util-links{display:flex;flex-wrap:wrap;gap:16px;font-family:var(--mono);letter-spacing:.04em}
+.util-links a:hover{color:var(--gold)}
+.util .socials{display:flex;gap:12px}
+.util .socials a{width:22px;height:22px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.22);border-radius:50%}
+.util .socials a:hover{background:var(--gold);border-color:var(--gold);color:var(--forest-deep)}
+.util .socials svg{width:11px;height:11px;fill:currentColor}
+
+/* ---------- masthead ---------- */
+.masthead{background:var(--white);border-bottom:1px solid var(--line)}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:26px;padding-bottom:26px}
+.brand{display:flex;align-items:center;gap:20px}
+.logo{height:86px;width:auto;flex:none}
+.brand .rule{width:1px;align-self:stretch;background:var(--line);margin:0 4px}
+@media(max-width:520px){.logo{height:48px}}
+.brand h1{font-size:clamp(26px,3vw,34px);letter-spacing:-.015em}
+.brand .sub{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.badges{display:flex;gap:10px;align-items:center}
+.badge{border:1px solid var(--line);padding:7px 12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.badge strong{color:var(--maroon);font-weight:600}
+
+/* ---------- nav ---------- */
+.nav{background:var(--maroon);position:sticky;top:0;z-index:60}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between}
+.menu{display:flex;list-style:none;margin:0;padding:0}
+.menu>li{position:relative}
+.menu>li>a,.menu>li>button{display:block;padding:14px 16px;color:#fff;font-weight:600;font-size:14px;letter-spacing:.02em;background:none;border:0;font-family:var(--body);cursor:pointer}
+.menu>li:hover>a,.menu>li:hover>button,.menu>li.open>a,.menu>li.open>button{background:var(--maroon-dark)}
+.drop{position:absolute;left:0;top:100%;min-width:250px;background:var(--white);border:1px solid var(--line);border-top:3px solid var(--gold);box-shadow:0 18px 40px rgba(19,39,32,.16);padding:8px 0;display:none;z-index:5}
+.menu>li:hover .drop,.menu>li.open .drop{display:block}
+.drop .grp{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);padding:11px 18px 5px;border-top:1px solid var(--paper-2)}
+.drop .grp:first-child{border-top:0}
+.drop a{display:block;padding:7px 18px;font-size:14px;color:var(--ink)}
+.drop a:hover{background:var(--paper-2);color:var(--maroon)}
+.navcta{color:#fff;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(255,255,255,.45);padding:8px 14px}
+.navcta:hover{background:var(--gold);border-color:var(--gold);color:var(--forest-deep)}
+.burger{display:none;background:none;border:0;color:#fff;padding:14px 16px;font-size:20px;cursor:pointer}
+
+
+
+/* ---------- sign-in hero (same recipe as the landing hero) ---------- */
+.hero{--hero-img:url('landing.jpg');background:linear-gradient(90deg,rgba(19,39,32,.94) 0%,rgba(19,39,32,.80) 42%,rgba(19,39,32,.50) 100%),var(--hero-img) center/cover no-repeat,var(--forest);color:#EDF1EE;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 1px,transparent 1px 46px);pointer-events:none}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;padding-top:64px;padding-bottom:72px;align-items:center}
+.wingtag{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--tint);padding:7px 14px;margin-bottom:20px;border-left:4px solid var(--gold)}
+.hero h2{font-size:clamp(34px,4.6vw,54px);letter-spacing:-.02em;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.hero h2 em{font-style:italic;color:var(--gold)}
+.hero p.lead{color:#C3D0C9;max-width:46ch;margin:18px 0 0;font-size:16.5px}
+.perks{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:12px;max-width:50ch}
+.perks li{display:flex;gap:12px;font-size:15px;color:#DCE5E0}
+.perks li::before{content:"";flex:none;width:8px;height:8px;margin-top:9px;background:var(--gold);transform:rotate(45deg)}
+.hero-meta{display:flex;gap:26px;margin-top:28px;flex-wrap:wrap}
+.hero-meta div{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#93A69C}
+.hero-meta b{display:block;font-family:var(--display);font-size:22px;letter-spacing:0;color:#fff;text-transform:none;margin-top:4px}
+
+/* sign-in panel (mirrors the catalogue search panel) */
+.search{background:var(--white);color:var(--ink);border-top:6px solid var(--gold);box-shadow:0 28px 60px rgba(0,0,0,.28)}
+.tabs{display:flex;border-bottom:1px solid var(--line)}
+.tabs button{flex:1;background:var(--paper-2);border:0;border-right:1px solid var(--line);padding:17px 10px;font-family:var(--body);font-weight:700;font-size:14px;letter-spacing:.03em;color:var(--muted);cursor:pointer}
+.tabs button:last-child{border-right:0}
+.tabs button[aria-selected="true"]{background:var(--white);color:var(--tint);box-shadow:inset 0 -3px 0 var(--tint)}
+.panel{padding:30px 28px 26px}
+.panel h3{font-size:24px}
+.panel .sub{margin:6px 0 22px;color:var(--muted);font-size:14.5px}
+.fld{margin-bottom:16px}
+.fld label{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.fld .box{position:relative;border:2px solid var(--line);background:#fff}
+.fld .box:focus-within{border-color:var(--gold)}
+.fld input{width:100%;border:0;padding:15px 16px;font-family:var(--body);font-size:17px;color:var(--ink);background:transparent;outline:none}
+.fld .show{position:absolute;right:6px;top:50%;transform:translateY(-50%);border:0;background:none;color:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:8px 10px;cursor:pointer}
+.fld .show:hover{color:var(--tint)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:2px 0 20px;font-size:14px;color:var(--muted)}
+.row label{display:flex;gap:8px;align-items:center;cursor:pointer}
+.row a{color:var(--tint);font-weight:600;border-bottom:1px solid var(--line)}
+.go{width:100%;border:0;background:var(--tint);color:#fff;padding:16px;font-family:var(--body);font-weight:700;font-size:16px;letter-spacing:.02em;cursor:pointer}
+.go:hover{background:var(--tintdark)}
+.msg{display:none;margin:0 0 16px;padding:11px 14px;font-size:14px;background:#FBF1E4;border-left:4px solid var(--gold);color:#5C4314}
 .msg.show{display:block}
-.help{margin-top:1.3rem;padding-top:1.1rem;border-top:1px solid var(--line);font-size:.84rem;color:var(--muted);line-height:1.55}
-.help a{color:var(--navy);font-weight:600}
-.wings{margin-top:.9rem;display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;font-size:.8rem;color:var(--muted)}
-.wings a{padding:.3rem .7rem;border-radius:999px;border:1px solid var(--line);text-decoration:none;color:var(--navy);font-weight:600}
-.wings a:hover{border-color:var(--accent);background:var(--bg)}
-.wings a.cur{background:var(--accent);border-color:var(--accent);color:#fff;pointer-events:none}
-footer{background:var(--navy);color:rgba(255,255,255,.8);text-align:center;padding:1.2rem;font-size:.82rem}
-footer b{color:var(--gold)}
-@media(max-width:860px){.wrap{grid-template-columns:1fr;gap:2rem}.intro{text-align:left}nav ul{display:none}}
+.help{margin:20px 0 0;padding-top:18px;border-top:1px dotted var(--line);font-size:14px;color:var(--muted)}
+.help a{color:var(--maroon);font-weight:600;border-bottom:1px solid var(--line)}
+.quicklinks{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;align-items:center}
+.quicklinks span{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.quicklinks a{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);padding:6px 10px;color:var(--muted)}
+.quicklinks a:hover{border-color:var(--maroon);color:var(--maroon)}
+.quicklinks a[aria-current="page"]{background:var(--forest);border-color:var(--forest);color:#fff;pointer-events:none}
+.mini{padding:34px 0 0}
+.mini .cols{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}
+@media(max-width:960px){
+  .hero{background:linear-gradient(rgba(19,39,32,.86),rgba(19,39,32,.86)),var(--hero-img) center/cover no-repeat,var(--forest)}
+  .hero .wrap{grid-template-columns:1fr;gap:34px}
+  .mini .cols{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  .burger{display:block}
+  .menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--maroon-dark);max-height:70vh;overflow:auto}
+  .menu.show{display:flex}
+  .drop{position:static;display:none;border:0;border-top:2px solid var(--gold);box-shadow:none;background:rgba(0,0,0,.18)}
+  .drop a,.drop .grp{color:#fff}
+  .drop a:hover{background:rgba(0,0,0,.25)}
+  .menu>li:hover .drop{display:none}
+  .menu>li.open .drop{display:block}
+  .navcta{display:none}
+  .badges{display:none}
+  .mini .cols{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
+
+/* footer */
+footer{background:var(--forest-deep);color:#B9C7BF;padding:56px 0 0}
+footer .cols{display:grid;grid-template-columns:1.5fr 1fr 1.1fr;gap:40px}
+footer h3{color:#fff;font-size:19px;margin-bottom:14px}
+footer p{font-size:14.5px}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{padding:6px 0;font-size:14.5px;border-bottom:1px solid rgba(255,255,255,.08)}
+footer a:hover{color:var(--gold)}
+footer address{font-style:normal;font-size:14.5px;line-height:1.8}
+.legal{margin-top:44px;border-top:1px solid rgba(255,255,255,.12);padding:18px 0;font-family:var(--mono);font-size:11px;letter-spacing:.06em;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:#7E9188}
+
+
+:root{--tint:#8C1D2F;--tintdark:#6B1523}
 </style>
 </head>
 <body>
-<div class="topbar"><div class="in">
- <span>Learners Cove &middot; School Library</span>
- <span><a href="index.html">Library Home</a><a href="databases.html">Databases</a><a href="mailto:library@yourschool.edu">Contact the Librarian</a></span>
-</div></div>
 
-<header class="site"><div class="in">
- <a class="brand" href="index.html"><div class="logo">L</div><div><b>Primary Library</b><small>PYP &middot; Learners Cove</small></div></a>
- <nav aria-label="Main"><ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="primary.html">Primary Wing</a></li>
-  <li><a href="databases.html">Databases</a></li>
-  <li><a class="active" href="login-primary.html">Login</a></li>
- </ul></nav>
-</div></header>
-
-<main class="hero"><div class="wrap">
- <section class="intro">
-  <span class="chip"><i>&#9679;</i> Students & Parents of the Primary Wing</span>
-  <h1>Welcome to the <span>Primary Library</span></h1>
-  <p class="lead">Log in to borrow books, see what you have checked out, and place reservations for your next great read.</p>
-  <ul class="perks"><li>Browse and reserve picture books, readers and non-fiction</li><li>Track loans and due dates</li><li>Parents can follow their child's reading journey</li></ul>
- </section>
-
- <section class="card" aria-labelledby="lt">
-  <h2 id="lt">Library Login</h2>
-  <p class="sub">Stories, curiosity and the joy of reading</p>
-
-  <div class="tabs" role="tablist" aria-label="Account type">
-   <button type="button" role="tab" id="tab-student" aria-selected="true" aria-controls="form">Student</button>
-   <button type="button" role="tab" id="tab-parent" aria-selected="false" aria-controls="form">Parent</button>
+<!-- UTILITY BAR -->
+<div class="util">
+  <div class="wrap">
+    <nav class="util-links" aria-label="Quick links">
+      <a href="index.html#catalogue">Catalogue (OPAC)</a>
+      <a href="databases.html">Databases</a>
+      <a href="index.html#catalogue">eBooks &amp; Audiobooks</a>
+      <a href="index.html#downloads">Downloads</a>
+      <a href="index.html#remote">Remote access</a>
+      <a href="https://tsrahyderabad.com/">TSRA main site</a>
+    </nav>
   </div>
+</div>
 
-  <div class="msg" id="msg" role="alert"></div>
-
-  <form id="form" method="post" novalidate>
-   <input type="hidden" name="koha_login_context" value="opac">
-   <input type="hidden" id="role" name="account_type" value="student">
-   <div class="field">
-    <label for="user" id="userLabel">Student username or ID</label>
-    <input type="text" id="user" name="login_userid" autocomplete="username" required placeholder="e.g. 2025-0123">
-   </div>
-   <div class="field">
-    <label for="pw">Password</label>
-    <div class="input">
-     <input type="password" id="pw" name="login_password" autocomplete="current-password" required placeholder="Enter your password">
-     <button type="button" class="toggle" id="toggle" aria-label="Show password">Show</button>
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">
+      <a href="https://tsrahyderabad.com/">
+        <img class="logo" src="https://tsrahyderabad.com/wp-content/uploads/2025/11/Logo-768x391-2.png" width="768" height="391" alt="The Shri Ram Academy, Hyderabad">
+      </a>
+      <span class="rule" aria-hidden="true"></span>
+      <div>
+        <h1>Learners Cove <span style="font-weight:400;font-size:.72em;color:var(--muted)">(Library)</span></h1>
+        <div class="sub">The Shri Ram Academy &middot; Hyderabad</div>
+      </div>
     </div>
-   </div>
-   <div class="row">
-    <label><input type="checkbox" id="remember"> Remember my username</label>
-    <a href="mailto:library@yourschool.edu?subject=Primary Library%20password%20help">Forgot password?</a>
-   </div>
-   <button class="btn" type="submit">Log in to the Library</button>
-  </form>
-
-  <div class="help" id="help"></div>
-
-  <div class="wings">Other wings:
-   <a href="login-primary.html" class="cur">Primary</a><a href="login-middle.html" class="">Middle</a><a href="login-senior.html" class="">Senior</a>
+    <div class="badges">
+      <span class="badge"><strong>Primary Cove</strong> &middot; Nursery &ndash; Grade 5</span>
+      <span class="badge">Open <strong>8.00&ndash;15.00</strong> Mon&ndash;Fri</span>
+    </div>
   </div>
- </section>
-</div></main>
+</header>
 
-<footer>&copy; <span id="yr"></span> <b>Learners Cove</b> School Library &middot; Primary &middot; Middle &middot; Senior</footer>
+<!-- NAV -->
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">&#9776; Menu</button>
+    <ul class="menu" id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><button aria-expanded="false">Your Wing &#9662;</button>
+        <div class="drop">
+          <div class="grp">Primary Cove &middot; Nursery&ndash;Grade 5</div>
+          <a href="primary.html">Primary Cove home</a>
+          <a href="primary-borrowing.html">Borrowing &amp; library periods</a>
+          <a href="primary-digital.html">Digital picks</a>
+          <a href="primary-exhibition.html">PYP exhibition</a>
+          <a href="primary-parents.html">For parents</a>
+          <a href="login-primary.html">Sign in to Primary Cove</a>
+          <div class="grp">Middle Cove &middot; Grades 6&ndash;8</div>
+          <a href="middle.html">Middle Cove home</a>
+          <a href="middle-borrowing.html">Borrowing &amp; library periods</a>
+          <a href="middle-digital.html">Databases for MYP 1&ndash;3</a>
+          <a href="middle-sources.html">Judging a source</a>
+          <a href="middle-citing.html">Citing &amp; referencing</a>
+          <a href="middle-clubs.html">Readers&rsquo; club &amp; Book Week</a>
+          <a href="login-middle.html">Sign in to Middle Cove</a>
+          <div class="grp">Senior Cove &middot; Grade 9 and above</div>
+          <a href="senior.html">Senior Cove home</a>
+          <a href="senior-borrowing.html">Borrowing &amp; study spaces</a>
+          <a href="senior-databases.html">Databases</a>
+          <a href="senior-research.html">Research skills</a>
+          <a href="senior-projects.html">Projects &amp; Academic Integrity</a>
+          <a href="login-senior.html">Sign in to Senior Cove</a>
+          <div class="grp">CP Library &middot; Career-related Programme</div>
+          <a href="cp.html">CP Library home</a>
+          <a href="cp-reflective-project.html">Reflective project</a>
+          <a href="cp-databases.html">Databases for CP</a>
+          <a href="cp-pathways.html">Research by career area</a>
+        </div>
+      </li>
+      <li><a href="databases.html">Databases</a></li>
+      <li><a href="index.html#remote">Remote access</a></li>
+      <li><a href="index.html#contact">Contact us</a></li>
+    </ul>
+    <a class="navcta" href="login-primary.html" aria-current="page">My account</a>
+  </div>
+</nav>
+
+<!-- SIGN IN -->
+<main class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="wingtag">Primary Cove &middot; Nursery &ndash; Grade 5</span>
+      <h2>Where reading <em>begins</em>.</h2>
+      <p class="lead">Sign in to see what you have borrowed, place a hold on the next book you want, and keep your reading going.</p>
+      <ul class="perks"><li>Reserve picture books and readers from any device</li><li>See items on loan and their due dates</li><li>Parents: borrow alongside your child on Wednesdays and Fridays, 14:00&ndash;15:00</li></ul>
+      <div class="hero-meta">
+        <div>Borrow up to<b>2 items</b></div>
+        <div>Loan period<b>7 days</b></div>
+      </div>
+    </div>
+
+    <section class="search" aria-labelledby="st">
+      <div class="tabs" role="tablist" aria-label="Who is signing in">
+        <button type="button" role="tab" id="t-student" aria-selected="true" aria-controls="panel">Student</button>
+        <button type="button" role="tab" id="t-parent" aria-selected="false" aria-controls="panel">Parent</button>
+      </div>
+      <div class="panel" id="panel" role="tabpanel">
+        <h3 id="st">Sign in to Primary Cove</h3>
+        <p class="sub" id="sub"></p>
+        <div class="msg" id="msg" role="alert"></div>
+
+        <form id="form" method="post" novalidate>
+          <input type="hidden" name="koha_login_context" value="opac">
+          <input type="hidden" name="account_type" id="role" value="student">
+          <div class="fld">
+            <label for="user" id="userLabel">Username or school email</label>
+            <div class="box"><input type="text" id="user" name="login_userid" autocomplete="username" required></div>
+          </div>
+          <div class="fld">
+            <label for="pw">Password</label>
+            <div class="box">
+              <input type="password" id="pw" name="login_password" autocomplete="current-password" required style="padding-right:80px">
+              <button type="button" class="show" id="show" aria-label="Show password">Show</button>
+            </div>
+          </div>
+          <div class="row">
+            <label><input type="checkbox" id="remember"> Remember my username</label>
+            <a href="mailto:library@tsrahyderabad.com?subject=Primary Cove%20sign-in%20help">Forgot password?</a>
+          </div>
+          <button class="go" type="submit">Sign in</button>
+        </form>
+
+        <p class="help" id="help"></p>
+
+        <div class="quicklinks">
+          <span>Other wings</span>
+          <a href="login-primary.html" aria-current="page">Primary</a><a href="login-middle.html">Middle</a><a href="login-senior.html">Senior</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="wrap mini">
+    <div class="cols">
+      <div>
+        <h3>Learners Cove (Library)</h3>
+        <p>The Shri Ram Academy, Hyderabad. Open Monday to Friday, 08:00 &ndash; 15:00.</p>
+      </div>
+      <div>
+        <h3>Contact us</h3>
+        <address>
+          Phone: <a href="tel:+917569891111">+91 75698 91111</a><br>
+          Email: <a href="mailto:library@tsrahyderabad.com">library@tsrahyderabad.com</a>
+        </address>
+      </div>
+      <div>
+        <h3>Useful links</h3>
+        <ul>
+          <li><a href="index.html">Library home</a></li>
+          <li><a href="databases.html">Databases</a></li>
+          <li><a href="https://tsrah.shriconnect.net/SCGen/Login.aspx?Status=E">Shri Connect (parent portal)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>&copy; 2026 The Shri Ram Academy, Hyderabad &middot; All rights reserved</span>
+      <span>Primary Cove</span>
+    </div>
+  </div>
+</footer>
 
 <script>
-/* ---- SITE SETTINGS (edit these two lines) ---- */
-var LOGIN_URL = "/cgi-bin/koha/opac-user.pl"; // your catalogue / library system login address
-var LIBRARIAN_EMAIL = "library@yourschool.edu";             // shown in help text
-/* ---------------------------------------------- */
-var form=document.getElementById('form'),user=document.getElementById('user'),pw=document.getElementById('pw'),
-    msg=document.getElementById('msg'),role=document.getElementById('role'),label=document.getElementById('userLabel'),
-    help=document.getElementById('help'),KEY='lc_user_primary';
+/* ---- SITE SETTING: the address your catalogue's sign-in form posts to ---- */
+var LOGIN_URL = "/cgi-bin/koha/opac-user.pl";
+/* --------------------------------------------------------------------------- */
+var LIB_EMAIL = "library@tsrahyderabad.com";
+var form=document.getElementById('form'), user=document.getElementById('user'), pw=document.getElementById('pw'),
+    msg=document.getElementById('msg'), role=document.getElementById('role'), label=document.getElementById('userLabel'),
+    help=document.getElementById('help'), sub=document.getElementById('sub'), KEY='lc_user_primary';
 var copy={
- student:{label:'Student username or ID',ph:'e.g. 2025-0123',type:'text',auto:'username',
-  help:'<b>Students:</b> use the username and password issued by the library. New to the library or lost your login? Ask your librarian.'},
- parent:{label:'Parent username or registered email',ph:'name@example.com',type:'text',auto:'username',
-  help:'<b>Parents:</b> use the library login registered for your child\'s account. Not registered yet? Email <a href="mailto:'+LIBRARIAN_EMAIL+'">'+LIBRARIAN_EMAIL+'</a> from your registered address.'}
+ student:{label:'Username or school email', ph:'Your school login',
+  sub:'Use the login you use for school email. It also opens our databases from home.',
+  help:'New, or lost your login? Ask your librarian or email <a href="mailto:'+LIB_EMAIL+'">'+LIB_EMAIL+'</a>.'},
+ parent:{label:'Parent username or registered email', ph:'The login registered with the library',
+  sub:'Use the login registered with the library for your child&rsquo;s account.',
+  help:'Not registered yet? Email <a href="mailto:'+LIB_EMAIL+'">'+LIB_EMAIL+'</a> from your registered address. Parent borrowing is Wednesdays and Fridays, 14:00&ndash;15:00.'}
 };
 function setRole(r){
  role.value=r;
- ['student','parent'].forEach(function(k){document.getElementById('tab-'+k).setAttribute('aria-selected',k===r)});
- label.textContent=copy[r].label;user.placeholder=copy[r].ph;help.innerHTML=copy[r].help;msg.className='msg';
+ ['student','parent'].forEach(function(k){document.getElementById('t-'+k).setAttribute('aria-selected',String(k===r))});
+ label.textContent=copy[r].label; user.placeholder=copy[r].ph; sub.innerHTML=copy[r].sub; help.innerHTML=copy[r].help;
+ msg.className='msg';
 }
-document.getElementById('tab-student').onclick=function(){setRole('student')};
-document.getElementById('tab-parent').onclick=function(){setRole('parent')};
-document.getElementById('toggle').onclick=function(){
- var show=pw.type==='password';pw.type=show?'text':'password';this.textContent=show?'Hide':'Show';
- this.setAttribute('aria-label',show?'Hide password':'Show password');
+document.getElementById('t-student').onclick=function(){setRole('student')};
+document.getElementById('t-parent').onclick=function(){setRole('parent')};
+document.getElementById('show').onclick=function(){
+ var s=pw.type==='password'; pw.type=s?'text':'password'; this.textContent=s?'Hide':'Show';
+ this.setAttribute('aria-label',s?'Hide password':'Show password');
 };
-try{var saved=localStorage.getItem(KEY);if(saved){user.value=saved;document.getElementById('remember').checked=true}}catch(e){}
+try{var saved=localStorage.getItem(KEY); if(saved){user.value=saved; document.getElementById('remember').checked=true}}catch(e){}
 form.addEventListener('submit',function(e){
- if(!user.value.trim()||!pw.value){
-  e.preventDefault();msg.textContent='Please enter both your username and password.';msg.className='msg show';return;
- }
- try{if(document.getElementById('remember').checked)localStorage.setItem(KEY,user.value.trim());else localStorage.removeItem(KEY)}catch(e){}
- if(!LOGIN_URL){e.preventDefault();msg.textContent='Login is not connected yet. Please contact the librarian.';msg.className='msg show';return;}
+ if(!user.value.trim()||!pw.value){e.preventDefault(); msg.textContent='Please enter both your username and password.'; msg.className='msg show'; return;}
+ try{ if(document.getElementById('remember').checked) localStorage.setItem(KEY,user.value.trim()); else localStorage.removeItem(KEY);}catch(e){}
+ if(!LOGIN_URL){e.preventDefault(); msg.textContent='Sign-in is not connected yet. Please contact the librarian.'; msg.className='msg show'; return;}
  form.action=LOGIN_URL;
 });
 setRole('student');
-document.getElementById('yr').textContent=new Date().getFullYear();
+
+/* ---- menu (same behaviour as the landing page) ---- */
+document.querySelectorAll('.menu > li > button').forEach(function(btn){
+ btn.addEventListener('click',function(e){
+  e.preventDefault();
+  var li=btn.parentElement, open=li.classList.contains('open');
+  document.querySelectorAll('.menu > li').forEach(function(x){x.classList.remove('open'); var b=x.querySelector('button'); if(b) b.setAttribute('aria-expanded','false');});
+  if(!open){li.classList.add('open'); btn.setAttribute('aria-expanded','true');}
+ });
+});
+document.addEventListener('click',function(e){ if(!e.target.closest('.menu')) document.querySelectorAll('.menu > li').forEach(function(x){x.classList.remove('open')}); });
+var burger=document.getElementById('burger'), menu=document.getElementById('menu');
+burger.addEventListener('click',function(){var on=menu.classList.toggle('show'); burger.setAttribute('aria-expanded',on);});
 </script>
 </body>
 </html>
