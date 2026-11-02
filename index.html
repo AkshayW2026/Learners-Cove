@@ -949,6 +949,35 @@ document.getElementById('quotes').addEventListener('click',e=>{
   modal.showModal();
 });
 document.getElementById('m-close').addEventListener('click',()=>modal.close());
+  
+  /* Featured Books Carousel */
+
+const carousel = document.querySelector(".book-carousel");
+
+if (carousel) {
+
+  const nextBtn = document.querySelector(".next");
+  const prevBtn = document.querySelector(".prev");
+
+  if(nextBtn){
+    nextBtn.addEventListener("click", () => {
+      carousel.scrollBy({
+        left: 300,
+        behavior: "smooth"
+      });
+    });
+  }
+
+  if(prevBtn){
+    prevBtn.addEventListener("click", () => {
+      carousel.scrollBy({
+        left: -300,
+        behavior: "smooth"
+      });
+    });
+  }
+
+}
 </script>
 </body>
 </html>
