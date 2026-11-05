@@ -444,11 +444,6 @@ footer address{font-style:normal;font-size:14.5px;line-height:1.8}
 
       <div class="panel" role="tabpanel" id="p-digital" aria-labelledby="t-digital" hidden>
         <div class="field">
-         <form action="https://www.overdrive.com/search"
-      method="get"
-      target="_blank"
-      class="field">
-
     <select aria-label="Format">
         <option>All formats</option>
         <option>eBook</option>
@@ -457,15 +452,16 @@ footer address{font-style:normal;font-size:14.5px;line-height:1.8}
 
     <input
         type="search"
-        name="q"
-        placeholder="Search eBooks and audiobooks"
-        required>
+        id="digital-search"
+        placeholder="Search eBooks and audiobooks">
 
-    <button type="submit">
+    <button
+        type="button"
+        id="digital-search-btn">
         Search
     </button>
 
-</form>
+</div>
         </div>
         <p class="hint">Borrow to any device with your school login. Two digital titles at a time. <a href="#remote">Set up remote access</a></p>
         <div class="quicklinks"><a href="#">Sora</a><a href="#">Epic!</a><a href="#">Audiobooks A&ndash;Z</a><a href="#">Graphic novels</a></div>
@@ -913,6 +909,36 @@ document.getElementById('quotes').addEventListener('click',e=>{
 });
 document.getElementById('m-close').addEventListener('click',()=>modal.close());
   
+</script>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+
+    const searchBtn = document.getElementById('digital-search-btn');
+    const searchInput = document.getElementById('digital-search');
+
+    function searchOverDrive() {
+
+        const query = searchInput.value.trim();
+
+        if (!query) return;
+
+        window.open(
+            'https://www.overdrive.com/search?q=' +
+            encodeURIComponent(query),
+            '_blank'
+        );
+    }
+
+    searchBtn.addEventListener('click', searchOverDrive);
+
+    searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            searchOverDrive();
+        }
+    });
+
+});
 </script>
 </body>
 </html>
